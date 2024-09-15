@@ -1,0 +1,12 @@
+C:\MyGame-main (1)\PandaGameLibrary\PandaGameLibrary\bin\Release\net8.0\PandaGameLibrary.deps.json
+C:\MyGame-main (1)\PandaGameLibrary\PandaGameLibrary\bin\Release\net8.0\PandaGameLibrary.dll
+C:\MyGame-main (1)\PandaGameLibrary\PandaGameLibrary\bin\Release\net8.0\PandaGameLibrary.pdb
+C:\MyGame-main (1)\PandaGameLibrary\PandaGameLibrary\obj\Release\net8.0\PandaGameLibrary.csproj.AssemblyReference.cache
+C:\MyGame-main (1)\PandaGameLibrary\PandaGameLibrary\obj\Release\net8.0\PandaGameLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\MyGame-main (1)\PandaGameLibrary\PandaGameLibrary\obj\Release\net8.0\PandaGameLibrary.AssemblyInfoInputs.cache
+C:\MyGame-main (1)\PandaGameLibrary\PandaGameLibrary\obj\Release\net8.0\PandaGameLibrary.AssemblyInfo.cs
+C:\MyGame-main (1)\PandaGameLibrary\PandaGameLibrary\obj\Release\net8.0\PandaGameLibrary.csproj.CoreCompileInputs.cache
+C:\MyGame-main (1)\PandaGameLibrary\PandaGameLibrary\obj\Release\net8.0\PandaGameLibrary.dll
+C:\MyGame-main (1)\PandaGameLibrary\PandaGameLibrary\obj\Release\net8.0\refint\PandaGameLibrary.dll
+C:\MyGame-main (1)\PandaGameLibrary\PandaGameLibrary\obj\Release\net8.0\PandaGameLibrary.pdb
+C:\MyGame-main (1)\PandaGameLibrary\PandaGameLibrary\obj\Release\net8.0\ref\PandaGameLibrary.dll
