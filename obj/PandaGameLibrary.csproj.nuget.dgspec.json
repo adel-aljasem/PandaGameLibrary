@@ -66,10 +66,6 @@
               "target": "Package",
               "version": "[8.0.6, )"
             },
-            "Microsoft.Extensions.Logging.Console": {
-              "target": "Package",
-              "version": "[8.0.0, )"
-            },
             "MonoGame.Framework.DesktopGL": {
               "target": "Package",
               "version": "[3.8.2.1105, )"

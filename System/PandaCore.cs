@@ -19,12 +19,13 @@ public class PandaCore
     public RenderSystem RenderSystem { get; } = new RenderSystem();
     public AudioSystem AudioSystem { get; set; } = new AudioSystem();
     public NetworkSystem NetworkSystem { get; } = new NetworkSystem();
-    internal DebugSystem debugSystem = new DebugSystem("Fonts/File");
+    internal DebugSystem debugSystem;
     private SpriteBatch spriteBatch1;
     internal double UpdateTimeCollisions { get; private set; }
-    public void LoadContent()
+    public void LoadContent(string FontPath)
     {
         spriteBatch1 = new SpriteBatch(Game.GraphicsDevice);
+        debugSystem = new DebugSystem(FontPath);
         debugSystem?.LoadContent(Game.Content);
     }
 

@@ -10,3 +10,4 @@ C:\MyGame-main (1)\PandaGameLibrary\PandaGameLibrary\obj\Debug\net8.0\PandaGameL
 C:\MyGame-main (1)\PandaGameLibrary\PandaGameLibrary\obj\Debug\net8.0\refint\PandaGameLibrary.dll
 C:\MyGame-main (1)\PandaGameLibrary\PandaGameLibrary\obj\Debug\net8.0\PandaGameLibrary.pdb
 C:\MyGame-main (1)\PandaGameLibrary\PandaGameLibrary\obj\Debug\net8.0\ref\PandaGameLibrary.dll
+C:\MyGame-main (1)\PandaGameLibrary\PandaGameLibrary\obj\Debug\net8.0\PandaGameLibrary.sourcelink.json
