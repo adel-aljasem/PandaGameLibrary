@@ -33,6 +33,14 @@ public class Render2D : Component
         return Texture;
     }
 
+    public void LoadTexture(Texture2D texture2D, int width, int height)
+    {
+        Texture = texture2D;
+        AnimationManagerComponent.SetFrameSizeAnimation(width, height);
+        Width = width;
+        Height = height;
+    }
+
     public void HitEffect(Color effectColor, float effectDuration)
     {
         SpriteColorEffect?.TriggerEffect(effectColor, effectDuration);
@@ -71,20 +79,23 @@ public class Render2D : Component
         int scaledSpriteHeight = (int)(originalSpriteHeight * scale);
 
         // Determine the column and row based on the index
-        int columns = Texture.Width / originalSpriteWidth;
-        int row = index / columns;
-        int column = index % columns;
+        if (Texture != null)
+        {
+            int columns = Texture.Width / originalSpriteWidth;
+            int row = index / columns;
+            int column = index % columns;
 
-        // Calculate the position within the texture for the original dimensions
-        int x = column * originalSpriteWidth;
-        int y = row * originalSpriteHeight;
+            // Calculate the position within the texture for the original dimensions
+            int x = column * originalSpriteWidth;
+            int y = row * originalSpriteHeight;
 
-        // Adjust the position to keep the scaling centered
-        int adjustedX = x - (scaledSpriteWidth - originalSpriteWidth) / 2;
-        int adjustedY = y - (scaledSpriteHeight - originalSpriteHeight) / 2;
+            // Adjust the position to keep the scaling centered
+            int adjustedX = x - (scaledSpriteWidth - originalSpriteWidth) / 2;
+            int adjustedY = y - (scaledSpriteHeight - originalSpriteHeight) / 2;
 
-        // Set the SourceRectangle with the scaled dimensions
-        SourceRectangle = new Rectangle(adjustedX, adjustedY, scaledSpriteWidth, scaledSpriteHeight);
+            // Set the SourceRectangle with the scaled dimensions
+            SourceRectangle = new Rectangle(adjustedX, adjustedY, scaledSpriteWidth, scaledSpriteHeight);
+        }
     }
 
 

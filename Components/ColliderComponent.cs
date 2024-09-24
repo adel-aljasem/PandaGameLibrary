@@ -73,19 +73,19 @@ namespace PandaGameLibrary.Components
         {
             XPosition = xPosition;
             YPosition = yPosition;
-            imageHeight = ImageHeight / 2;
-            imageWidth = ImageWidth / 2;
+            imageHeight = ImageHeight;
+            imageWidth = ImageWidth ;
             TileMapOptomaiztion = true;
         }
 
         public override void Update(GameTime gameTime)
         {
             UpdateCircle();
-            UpdateColliderShape();
-            UpdateColliderPosition(gameTime);
+            UpdateColliderCenterTileMap();
+            UpdateGameObjectPosition(gameTime);
         }
 
-        public void UpdateColliderShape()
+        public void UpdateColliderCenterTileMap()
         {
             ////int width = (int)base.gameObject.Transform.Scale.X;
             ////int height = (int)base.gameObject.Transform.Scale.Y;
@@ -106,7 +106,7 @@ namespace PandaGameLibrary.Components
             circle.Update();
         }
 
-        private void UpdateColliderPosition(GameTime gameTime)
+        private void UpdateGameObjectPosition(GameTime gameTime)
         {
             base.gameObject.Transform.Position += Velocity * (float)gameTime.ElapsedGameTime.TotalSeconds;
         }
