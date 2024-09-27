@@ -15,7 +15,7 @@ namespace PandaGameLibrary.System
         KeyboardState _previousKeyboardState;
         private List<GameObject> allGameObjects { get; set; }
         List<ColliderComponent> allColliders = new List<ColliderComponent>();
-
+        List<Component> allComponents = new List<Component>();
         // Timer variables
         private double elapsedTime = 0.0; // Time since last invocation
         private double elapsedTimeRender = 0.0; // Time since last invocation
@@ -86,10 +86,11 @@ namespace PandaGameLibrary.System
             {
                 var gameObjectsSnapshot = allGameObjects.ToList();
                 allColliders = new List<ColliderComponent>();
-
+                allComponents = new List<Component>();
                 // Collect all colliders in one pass
                 foreach (var gameObject in gameObjectsSnapshot)
                 {
+                    allComponents.AddRange(gameObject.GetComponents());
                     allColliders.AddRange(gameObject.GetComponents<ColliderComponent>());
                 }
 
@@ -130,6 +131,7 @@ namespace PandaGameLibrary.System
 
                 spriteBatch.DrawString(font, $"Objects: {allGameObjects.Count}", new Vector2(200f, 12f), Color.White);
                 spriteBatch.DrawString(font, $"Colliders: {allColliders.Count}", new Vector2(200f, 30f), Color.White);
+                spriteBatch.DrawString(font, $"Components: {allComponents.Count}", new Vector2(200f, 48f), Color.White);
                 spriteBatch.DrawString(font, $"Memory Usage: {currentProcess?.WorkingSet64 / 1024 / 1024} MB", new Vector2(320f, 30f), Color.White);
                 spriteBatch.DrawString(font, $"Current Threads: {Process.GetCurrentProcess().Threads.Count}", new Vector2(320f, 12), Color.White);
                 spriteBatch.DrawString(font, $"RenderTime: {_renderTimeMs} MS", new Vector2(540f, 30), Color.White);

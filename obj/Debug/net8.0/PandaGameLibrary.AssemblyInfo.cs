@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PandaGameLibrary")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c660be3416156b99ab0e17aab517c33139488744")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f57689ee0ce777902e8cf037aa805e60ae293083")]
 [assembly: System.Reflection.AssemblyProductAttribute("PandaGameLibrary")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PandaGameLibrary")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

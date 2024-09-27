@@ -68,13 +68,30 @@ namespace PandaGameLibrary.Components
         public override void Awake()
         {
         }
-    
+
+        public override void Start()
+        {
+            SetRadiusForTileMap();
+        }
+
+        private void SetRadiusForTileMap()
+        {
+            if (TileMapOptomaiztion)
+            {
+                float colliderDiameterX = Width / 2f;
+                float colliderDiameterY = Height / 2f;
+                Vector2 middleObject = base.gameObject.Transform.Position;
+                float raudisSize = Math.Max(colliderDiameterX, colliderDiameterY);
+                Radius = raudisSize;
+            }
+        }
+
         public void DrawColliderFromTiled(float xPosition, float yPosition, float ImageWidth, float ImageHeight)
         {
             XPosition = xPosition;
             YPosition = yPosition;
             imageHeight = ImageHeight;
-            imageWidth = ImageWidth ;
+            imageWidth = ImageWidth;
             TileMapOptomaiztion = true;
         }
 
@@ -94,8 +111,6 @@ namespace PandaGameLibrary.Components
                 float colliderDiameterX = Width / 2f;
                 float colliderDiameterY = Height / 2f;
                 Vector2 middleObject = base.gameObject.Transform.Position;
-                float raudisSize = Math.Max(colliderDiameterX, colliderDiameterY);
-                Radius = raudisSize;
                 Center = new Vector2(middleObject.X - imageWidth + XPosition + colliderDiameterX, middleObject.Y - imageHeight + YPosition + colliderDiameterY);
             }
         }

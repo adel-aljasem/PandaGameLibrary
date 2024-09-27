@@ -43,6 +43,18 @@ namespace PandaGameLibrary.System
             }
         }
 
+        public void RemoveGameObjectsByTag(string tag)
+        {
+            ImmutableInterlocked.Update(ref allGameObjects, list =>
+            {
+                var objectsToRemove = list.Where(go => go.Tag == tag).ToList();
+                foreach (var gameObject in objectsToRemove)
+                {
+                    RemoveGameObjectWithChildrenAndParent(gameObject);
+                }
+                return list.RemoveRange(objectsToRemove);
+            });
+        }
 
         public void RemoveGameObjects(IEnumerable<GameObject> gameObjects)
         {
