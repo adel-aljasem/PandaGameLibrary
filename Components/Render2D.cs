@@ -22,7 +22,6 @@ public class Render2D : Component
     public float Scale { get; set; } = 1f;
     public float LayerDepth { get; set; } = 1f;
     private SpriteColorEffect? SpriteColorEffect { get; set; }
-
     public Texture2D LoadTexture(string path, int width, int height)
     {
         Texture = PandaCore.Instance.Game.Content.Load<Texture2D>(path);
@@ -100,25 +99,6 @@ public class Render2D : Component
 
 
 
-    public Texture2D CreateTextureFromCurrentSheet(int index)
-    {
-        int spriteWidth = Width;
-        int spriteHeight = Height;
-        int columns = Texture.Width / spriteWidth;
-        int row = index / columns;
-        int column = index % columns;
-        int x = column * spriteWidth;
-        int y = row * spriteHeight;
-        Rectangle rectangle = new Rectangle(x, y, spriteWidth, spriteHeight);
-        Texture2D spriteTexture = new Texture2D(PandaCore.Instance.Game.GraphicsDevice, spriteWidth, spriteHeight);
-        Color[] data = new Color[spriteWidth * spriteHeight];
-        Texture.GetData(0, rectangle, data, 0, data.Length);
-        spriteTexture.SetData(data);
-        //Core.Instance.RenderSystem.AddRenderTexture(spriteTexture);
-        return spriteTexture;
-    }
-
-
     public override void Awake()
     {
         Position = base.gameObject.Transform.Position;
@@ -129,7 +109,7 @@ public class Render2D : Component
     public override void Draw(SpriteBatch spriteBatch, GameTime gameTime)
     {
 
-        if (Texture != null && !isThereAnimation)
+        if (Texture != null && !AnimationManagerComponent.IsPlaying)
         {
             spriteBatch.Draw(Texture, Position, SourceRectangle, Color, Rotation, Origin, Scale, spriteEffect, LayerDepth);
         }

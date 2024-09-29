@@ -18,7 +18,7 @@ internal class AnimationManagerComponent
 
 	public AnimationManagerComponent()
 	{
-		IsPlaying = true;
+		//IsPlaying = true;
 	}
 
 	public void AddAnimation(string name, Animation animation)
